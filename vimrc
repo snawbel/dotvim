@@ -11,6 +11,10 @@ set history=666
 " No need to be vi compatible in 2013
 set nocompatible
 
+" Enable filetypes plugin
+filetype plugin on
+filetype plugin indent on
+
 " Manage buffers efficiently
 set hidden
 
@@ -26,6 +30,11 @@ let g:mapleader = "\<Space>"
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
+" Highlight search results
+set hlsearch
+
+" Incremental search, like in modern browsers
+set incsearch
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -39,6 +48,7 @@ set noswapfile
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Tabs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Use spaces instead of tabs
 set expandtab
 
@@ -97,6 +107,12 @@ map <Down> <Nop>
 set ignorecase 
 set smartcase
 
+" Move around splits with Ctrl+[hjkl]
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -108,7 +124,6 @@ map <leader>nf :NERDTreeFind<cr>
 
 " CtrlP
 let g:ctrlp_map = '<leader>j'
-map <leader>j :PeepOpen<cr>
 
 """"""""""""""""""""""""""""""
 " => Status line

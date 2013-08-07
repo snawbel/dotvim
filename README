@@ -1,14 +1,36 @@
-Installation:
+# Eriks Vim setup
 
-    git clone git://github.com/snawbel/dotvim.git ~/.vim
+Inspired by http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
 
-    Create symlinks:
+## Installing a new plugin
+    git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
+    git add .
+    git commit -m "Install Fugitive.vim bundle as a submodule."
 
-        ln -s ~/.vim/vimrc ~/.vimrc
-        ln -s ~/.vim/gvimrc ~/.gvimrc 
+## Installing Vim on another machine
 
-    Switch to the `~/.vim` directory, and fetch submodules:
+    cd ~
+    git clone http://github.com/snawbel/dotvim.git ~/.vim
+    ln -s ~/.vim/vimrc ~/.vimrc
+    ln -s ~/.vim/gvimrc ~/.gvimrc
+    cd ~/.vim
+    git submodule init
+    git submodule update
 
-         cd ~/.vim
-         git submodule init
-         git submodule update
+
+## Upgrading a plugin bundle
+
+    cd ~/.vim/bundle/nerdtree
+    git pull origin master
+
+## Upgrading all bundles
+ 
+    git submodule foreach git pull origin master
+
+
+## Remove a plugin
+
+    git submodule deinit bundle/zencoding
+    rm -rf bundle/zencoding
+
+

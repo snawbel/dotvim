@@ -56,8 +56,8 @@ set expandtab
 set smarttab
 
 " 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 
 " Linebreak on 500 characters
 set lbr
@@ -124,6 +124,10 @@ map <leader>nf :NERDTreeFind<cr>
 
 " CtrlP
 let g:ctrlp_map = '<leader>j'
+
+" delimitMate
+let delimitMate_expand_cr = 1
+
 
 """"""""""""""""""""""""""""""
 " => Status line

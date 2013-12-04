@@ -25,3 +25,6 @@
 [submodule "bundle/autosave"]
 	path = bundle/autosave
 	url = https://github.com/907th/vim-auto-save.git
+[submodule "bundle/vim-less"]
+	path = bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git

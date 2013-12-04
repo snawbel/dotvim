@@ -36,6 +36,9 @@ set hlsearch
 " Incremental search, like in modern browsers
 set incsearch
 
+" Show line numbers
+set number
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -121,6 +124,7 @@ nnoremap <C-H> <C-W><C-H>
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark 
 map <leader>nf :NERDTreeFind<cr>
+let NERDTreeShowHidden=1
 
 " CtrlP
 let g:ctrlp_map = '<leader>j'
@@ -128,6 +132,8 @@ let g:ctrlp_map = '<leader>j'
 " delimitMate
 let delimitMate_expand_cr = 1
 
+" AutoSave - enable on startup
+let g:auto_save = 1  
 
 """"""""""""""""""""""""""""""
 " => Status line
@@ -138,6 +144,11 @@ set laststatus=2
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Clever mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Smart semicolons at the end of the line
+"inoremap <leader>; <C-o>A;
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions

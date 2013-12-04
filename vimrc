@@ -15,6 +15,7 @@ set nocompatible
 filetype plugin on
 filetype plugin indent on
 
+" "
 " Manage buffers efficiently
 set hidden
 
@@ -74,23 +75,19 @@ set wrap "Wrap lines
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable syntax highlighting
-syntax enable 
-
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf-8  
 
-colorscheme desert
+" Enable syntax highlighting
+syntax enable 
 
+" Enable 256 color schemes
+set t_Co=256
+
+" Colorscheme settings
 set background=dark
+colorscheme solarized
 
-" Set extra options when running in GUI mode
-if has("gui_running")
-    set guioptions-=T
-    set guioptions-=e
-    set t_Co=256
-    set guitablabel=%M\ %t
-endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
@@ -130,7 +127,7 @@ let NERDTreeShowHidden=1
 let g:ctrlp_map = '<leader>j'
 
 " delimitMate
-let delimitMate_expand_cr = 1
+"let delimitMate_expand_cr = 1
 
 " AutoSave - enable on startup
 let g:auto_save = 1  

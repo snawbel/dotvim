@@ -48,6 +48,8 @@ set nobackup
 set nowb
 set noswapfile
 
+" Treat elm as haskell for now
+autocmd BufRead,BufNewfile *.elm setlocal filetype=haskell
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Tabs

@@ -125,6 +125,9 @@ map <leader>nb :NERDTreeFromBookmark
 map <leader>nf :NERDTreeFind<cr>
 let NERDTreeShowHidden=1
 
+" vim-jsx
+let g:jsx_ext_required = 0  " enable jsx in files without .jsx extension
+
 " CtrlP
 let g:ctrlp_map = '<leader>j'
 

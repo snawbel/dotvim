@@ -137,6 +137,10 @@ let g:ctrlp_map = '<leader>j'
 " AutoSave - enable on startup
 let g:auto_save = 1  
 
+" Airline
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
+
 """"""""""""""""""""""""""""""
 " => Status line
 """"""""""""""""""""""""""""""

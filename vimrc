@@ -2,7 +2,20 @@
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Activate Pathogen to manage plugins
-call pathogen#infect()
+"call pathogen#infect()
+call plug#begin('~/.vim/plugged')
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug '907th/vim-auto-save'
+  Plug 'altercation/vim-colors-solarized'
+  Plug 'plasticboy/vim-markdown'
+  Plug 'reedes/vim-pencil'
+  Plug 'scrooloose/nerdtree'
+
+  Plug 'MarcWeber/vim-addon-mw-utils'
+  Plug 'tomtom/tlib_vim'
+  Plug 'garbas/vim-snipmate'
+call plug#end()
 
 " Sets how many lines of history VIM has to remember
 set history=666  
@@ -129,14 +142,9 @@ let NERDTreeShowHidden=1
 " vim-jsx
 let g:jsx_ext_required = 0  " enable jsx in files without .jsx extension
 
-" CtrlP
-let g:ctrlp_map = '<leader>j'
-
-" delimitMate
-"let delimitMate_expand_cr = 1
-
 " AutoSave - enable on startup
 let g:auto_save = 1  
+let g:auto_save_silent = 1  " do not display the auto-save notificatin
 
 " Airline
 let g:airline_theme='solarized'
@@ -144,41 +152,13 @@ let g:airline_solarized_bg='dark'
 
 " Polyglot
 let g:vim_markdown_frontmatter = 1   " highlight YAML frontmatter
-
-nmap <F9> :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
-
+let g:vim_markdown_folding_style_pythonic = 1
 
 " Pencil
+let g:pencil#wrapModeDefault = 'soft'  " Use soft line breaks
 
-" Autoenable for these filetypes
 augroup pencil
   autocmd!
   autocmd FileType markdown,mkd call pencil#init()
   autocmd FileType text         call pencil#init()
 augroup END
-
-" `Comment` disables autoformat in YAML front matter
-" See https://github.com/reedes/vim-pencil/issues/54
-let g:pencil#autoformat_config = {
-    \   'markdown': {
-    \     'black': [
-    \       'Comment',  
-    \       'htmlH[0-9]',
-    \       'markdown(Code|H[0-9]|Url|IdDeclaration|Link|Rule|Highlight[A-Za-z0-9]+)',
-    \       'markdown(FencedCodeBlock|InlineCode)',
-    \       'mkd(Code|Rule|Delimiter|Link|ListItem|IndentCode|Snippet)',
-    \       'mmdTable[A-Za-z0-9]*',
-    \     ],
-    \     'white': [
-    \      'markdown(Code|Link)',
-    \     ],
-    \   }
-    \ }
-
-

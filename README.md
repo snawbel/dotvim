@@ -1,11 +1,11 @@
 # Eriks Vim setup
 
-Inspired by http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
+## Installing a new plugin 
+Use [vim-plug](https://github.com/junegunn/vim-plug)
 
-## Installing a new plugin
-    git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
-    git add .
-    git commit -m "Install Fugitive.vim bundle as a submodule."
+1. Add `Plug 'repo/plugin'` to .vimrc
+2. Save and source .vimrc `:so %`
+3. Run `:PlugInstall`
 
 ## Installing Vim on another machine
 
@@ -14,22 +14,16 @@ Inspired by http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodul
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/gvimrc ~/.gvimrc
     cd ~/.vim
-    git submodule init
-    git submodule update
+    mkdir plugged
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 ## Upgrading a plugin bundle
 
-    cd ~/.vim/bundle/nerdtree
-    git pull origin master
-
-## Upgrading all bundles
- 
-    git submodule foreach git pull origin master
+`:PlugUpdate pluginname`
 
 ## Remove a plugin
 
-    git submodule deinit bundle/zencoding
-    rm -rf bundle/zencoding
+Remove from `.vimrc`
     
 # Other settings
 
@@ -39,6 +33,5 @@ Inspired by http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodul
 - In KeyRemap4MacBook, check Control L to Control L (+ When you type Control L only, send Escape).
 
 Now, hitting Caps Lock alone will escape while holding it down and hitting another key will act as Control.
-
 
 

@@ -1,4 +1,3 @@
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -8,14 +7,13 @@ call pathogen#infect()
 " Sets how many lines of history VIM has to remember
 set history=666  
 
-" No need to be vi compatible in 2013
+" No need to be vi compatible in 2017
 set nocompatible
 
 " Enable filetypes plugin
 filetype plugin on
 filetype plugin indent on
 
-" "
 " Manage buffers efficiently
 set hidden
 
@@ -24,6 +22,9 @@ set hidden
 nnoremap <SPACE> <Nop>
 let mapleader = "\<Space>"
 let g:mapleader = "\<Space>"
+
+" Enable code folds
+set foldenable
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -52,7 +53,7 @@ set noswapfile
 autocmd BufRead,BufNewfile *.elm setlocal filetype=haskell
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Tabs
+" => Tabs and Lines
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Use spaces instead of tabs
@@ -65,15 +66,13 @@ set smarttab
 set shiftwidth=2
 set tabstop=2
 
-" Linebreak on 80 chars
-set lbr
-set textwidth=80
-set formatoptions+=t   " autobreak at tw setting
-set formatoptions+=a   " auto format on every change
+set ai "Auto indent 
+set si "Smart indent 
 
-set ai "Auto indent
-set si "Smart indent
-set wrap "Wrap lines
+"set linebreak           " Don't break lines in the middle of words  
+"set textwidth=80          
+"set formatoptions+=t    " Break text at textwidth setting
+"set formatoptions+=a   " auto format on every change
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -143,5 +142,43 @@ let g:auto_save = 1
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
 
+" Polyglot
+let g:vim_markdown_frontmatter = 1   " highlight YAML frontmatter
+
+nmap <F9> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+
+" Pencil
+
+" Autoenable for these filetypes
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text         call pencil#init()
+augroup END
+
+" `Comment` disables autoformat in YAML front matter
+" See https://github.com/reedes/vim-pencil/issues/54
+let g:pencil#autoformat_config = {
+    \   'markdown': {
+    \     'black': [
+    \       'Comment',  
+    \       'htmlH[0-9]',
+    \       'markdown(Code|H[0-9]|Url|IdDeclaration|Link|Rule|Highlight[A-Za-z0-9]+)',
+    \       'markdown(FencedCodeBlock|InlineCode)',
+    \       'mkd(Code|Rule|Delimiter|Link|ListItem|IndentCode|Snippet)',
+    \       'mmdTable[A-Za-z0-9]*',
+    \     ],
+    \     'white': [
+    \      'markdown(Code|Link)',
+    \     ],
+    \   }
+    \ }
 
 

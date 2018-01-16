@@ -58,3 +58,6 @@
 [submodule "bundle/vim-markdown-folding"]
 	path = bundle/vim-markdown-folding
 	url = https://github.com/nelstrom/vim-markdown-folding.git
+[submodule "bundle/vim-pencil"]
+	path = bundle/vim-pencil
+	url = https://github.com/reedes/vim-pencil.git

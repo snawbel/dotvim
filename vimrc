@@ -65,9 +65,11 @@ set smarttab
 set shiftwidth=2
 set tabstop=2
 
-" Linebreak on 500 characters
+" Linebreak on 80 chars
 set lbr
-set tw=500
+set textwidth=80
+set formatoptions+=t   " autobreak at tw setting
+set formatoptions+=a   " auto format on every change
 
 set ai "Auto indent
 set si "Smart indent
@@ -141,41 +143,5 @@ let g:auto_save = 1
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
 
-""""""""""""""""""""""""""""""
-" => Status line
-""""""""""""""""""""""""""""""
-" Always show the status line
-set laststatus=2
-
-" Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
-
-""""""""""""""""""""""""""""""
-" => Clipboard
-""""""""""""""""""""""""""""""
-if has("clipboard")
-  set clipboard=unnamed " copy to the system clipboard
-
-  if has("unnamedplus") " X11 support
-    set clipboard+=unnamedplus
-  endif
-endif
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Clever mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Smart semicolons at the end of the line
-"inoremap <leader>; <C-o>A;
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Helper functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Returns true if paste mode is enabled
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    en
-    return ''
-endfunction
 
 

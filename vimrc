@@ -37,7 +37,7 @@ let mapleader = "\<Space>"
 let g:mapleader = "\<Space>"
 
 " Enable code folds
-set foldenable
+set nofoldenable  " disable for now
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -129,6 +129,12 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Move to next and previous item in quickfix list (populated by vimgrep)
+nnoremap [q :cprev<cr>
+nnoremap ]q :cnext<cr>
+nnoremap [Q :cfirst<cr>
+nnoremap ]Q :clast<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -153,6 +159,10 @@ let g:airline_solarized_bg='dark'
 " Polyglot
 let g:vim_markdown_frontmatter = 1   " highlight YAML frontmatter
 let g:vim_markdown_folding_style_pythonic = 1
+
+
+" Markdown
+let g:vim_markdown_conceal = 0  " Show full syntax for italics, bold etc
 
 " Pencil
 let g:pencil#wrapModeDefault = 'soft'  " Use soft line breaks

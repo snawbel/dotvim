@@ -1,8 +1,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Activate Pathogen to manage plugins
-"call pathogen#infect()
+" Add plugins below, then
+" :so ~/.vim/vimrc
+" :PlugInstall
 call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -15,6 +16,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'MarcWeber/vim-addon-mw-utils'
   Plug 'tomtom/tlib_vim'
   Plug 'garbas/vim-snipmate'
+  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 call plug#end()
 
 " Sets how many lines of history VIM has to remember

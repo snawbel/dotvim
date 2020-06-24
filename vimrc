@@ -12,11 +12,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'plasticboy/vim-markdown'
   Plug 'reedes/vim-pencil'
   Plug 'scrooloose/nerdtree'
-
   Plug 'MarcWeber/vim-addon-mw-utils'
   Plug 'tomtom/tlib_vim'
   Plug 'garbas/vim-snipmate'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+  Plug 'junegunn/goyo.vim'
 call plug#end()
 
 " Sets how many lines of history VIM has to remember
@@ -162,11 +162,11 @@ let g:airline_solarized_bg='dark'
 let g:vim_markdown_frontmatter = 1   " highlight YAML frontmatter
 let g:vim_markdown_folding_style_pythonic = 1
 
-
 " Markdown
 let g:vim_markdown_conceal = 0  " Show full syntax for italics, bold etc
 
 " Pencil
+let g:pencil#conceallevel = 0   " Don't conceal anything 
 let g:pencil#wrapModeDefault = 'soft'  " Use soft line breaks
 
 augroup pencil

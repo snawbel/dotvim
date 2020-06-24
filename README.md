@@ -34,4 +34,11 @@ Remove from `.vimrc`
 
 Now, hitting Caps Lock alone will escape while holding it down and hitting another key will act as Control.
 
+## Font Stuff
+
+- Use https://github.com/cseelus/monego - Monaco with variants.
+- Enable italics in iTerm with a custom TERMINFO: https://gist.github.com/sos4nt/3187620#gistcomment-2905187
+
+
+
 

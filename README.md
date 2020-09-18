@@ -9,13 +9,13 @@ Use [vim-plug](https://github.com/junegunn/vim-plug)
 
 ## Installing Vim on another machine
 
-    cd ~
-    git clone http://github.com/snawbel/dotvim.git ~/.vim
-    ln -s ~/.vim/vimrc ~/.vimrc
-    ln -s ~/.vim/gvimrc ~/.gvimrc
-    cd ~/.vim
-    mkdir plugged
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  cd ~
+  git clone http://github.com/snawbel/dotvim.git ~/.vim
+  ln -s ~/.vim/vimrc ~/.vimrc
+  ln -s ~/.vim/gvimrc ~/.gvimrc
+  cd ~/.vim
+  mkdir plugged
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 ## Upgrading a plugin bundle
 
@@ -24,6 +24,14 @@ Use [vim-plug](https://github.com/junegunn/vim-plug)
 ## Remove a plugin
 
 Remove from `.vimrc`
+
+## Vim Dances
+
+### Find in all files
+
+`:vim /StuffToFind/g ./src/**/*.js`
+
+Then use <kbd>[</kbd><kbd>q</kbd> and <kbd>]</kbd><kbd>q</kbd> to move between search hits.
     
 # Other settings
 

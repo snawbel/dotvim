@@ -17,6 +17,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'garbas/vim-snipmate'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'junegunn/goyo.vim'
+  Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
 " Sets how many lines of history VIM has to remember
@@ -158,7 +159,7 @@ let g:auto_save_silent = 1  " do not display the auto-save notificatin
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
 
-" Polyglot
+" Polyglot Still used??
 let g:vim_markdown_frontmatter = 1   " highlight YAML frontmatter
 let g:vim_markdown_folding_style_pythonic = 1
 

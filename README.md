@@ -24,6 +24,14 @@ Use [vim-plug](https://github.com/junegunn/vim-plug)
 ## Remove a plugin
 
 Remove from `.vimrc`
+
+## Vim Dances
+
+### Find in all files
+
+`:vim /StuffToFind/g ./src/**/*.js`
+
+Then use <kbd>[</kbd><kbd>q</kbd> and <kbd>]</kbd><kbd>q</kbd> to move between search hits.
     
 # Other settings
 

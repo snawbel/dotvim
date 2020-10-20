@@ -18,6 +18,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'junegunn/goyo.vim'
   Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'tpope/vim-surround'
 call plug#end()
 
 " Sets how many lines of history VIM has to remember

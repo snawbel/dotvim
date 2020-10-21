@@ -19,6 +19,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/goyo.vim'
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-commentary'
 call plug#end()
 
 " Sets how many lines of history VIM has to remember

@@ -8,7 +8,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug '907th/vim-auto-save'
-  Plug 'altercation/vim-colors-solarized'
   Plug 'plasticboy/vim-markdown'
   Plug 'reedes/vim-pencil'
   Plug 'scrooloose/nerdtree'
@@ -20,6 +19,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
+  Plug 'lifepillar/vim-solarized8'
 call plug#end()
 
 " Sets how many lines of history VIM has to remember
@@ -107,7 +107,8 @@ set t_Co=256
 
 " Colorscheme settings
 set background=dark
-colorscheme solarized
+autocmd vimenter * ++nested colorscheme solarized8
+" colorscheme solarized8
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -158,8 +159,8 @@ let g:auto_save = 1
 let g:auto_save_silent = 1  " do not display the auto-save notificatin
 
 " Airline
-let g:airline_theme='solarized'
-let g:airline_solarized_bg='dark'
+" let g:airline_theme='solarized8'
+" let g:airline_solarized_bg='dark'
 
 " Polyglot Still used??
 let g:vim_markdown_frontmatter = 1   " highlight YAML frontmatter

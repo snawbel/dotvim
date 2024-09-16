@@ -13,7 +13,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'scrooloose/nerdtree'
   Plug 'MarcWeber/vim-addon-mw-utils'
   Plug 'tomtom/tlib_vim'
-  Plug 'garbas/vim-snipmate'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'junegunn/goyo.vim'
   Plug 'maxmellon/vim-jsx-pretty'

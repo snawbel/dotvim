@@ -17,6 +17,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
   Plug 'ericbn/vim-solarized'
+
+  " Syntax highligting and indentation for .astro files
+  Plug 'wuelnerdotexe/vim-astro'
 call plug#end()
 
 " Sets how many lines of history VIM has to remember

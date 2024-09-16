@@ -16,7 +16,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
-  Plug 'lifepillar/vim-solarized8'
+  Plug 'ericbn/vim-solarized'
 call plug#end()
 
 " Sets how many lines of history VIM has to remember
@@ -100,12 +100,13 @@ set encoding=utf-8
 syntax enable 
 
 " Enable 256 color schemes
-set t_Co=256
+" set t_Co=256
 
 " Colorscheme settings
+set termguicolors
 set background=dark
-autocmd vimenter * ++nested colorscheme solarized8
-" colorscheme solarized8
+colorscheme solarized
+" autocmd vimenter * ++nested colorscheme solarized8
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

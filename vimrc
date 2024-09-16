@@ -12,7 +12,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'reedes/vim-pencil'
   Plug 'scrooloose/nerdtree'
   Plug 'MarcWeber/vim-addon-mw-utils'
-  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'junegunn/goyo.vim'
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'tpope/vim-surround'

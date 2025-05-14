@@ -38,7 +38,7 @@ Then use <kbd>[</kbd><kbd>q</kbd> and <kbd>]</kbd><kbd>q</kbd> to move between s
 ## Remap Capslock to Ctrl/Esc
 
 - Remap Caps Lock to Control in the Keyboard preference pane.
-- In KeyRemap4MacBook, check Control L to Control L (+ When you type Control L only, send Escape).
+- In Karabiner-Elements, enable *Change caps_lock to control if pressed with other keys, to escape if pressed alone*.
 
 Now, hitting Caps Lock alone will escape while holding it down and hitting another key will act as Control.
 
